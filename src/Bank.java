@@ -7,7 +7,7 @@ public class Bank {
     public Bank(String bic,String instistutenName)
     {
         this.bic = bic;
-        this.instistutenName,instistutenName;
+        this.instistutenName = instistutenName;
     }
 
 

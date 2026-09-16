@@ -1,4 +1,4 @@
-public class Kontobewegung {
+public class Kontobewegung{
     double betrag;
     Konto[] myKonto;
 
