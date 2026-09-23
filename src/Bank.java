@@ -9,6 +9,4 @@ public class Bank {
         this.bic = bic;
         this.instistutenName = instistutenName;
     }
-
-
 }

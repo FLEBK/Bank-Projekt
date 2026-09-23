@@ -7,4 +7,14 @@ public class Sparkonto extends Konto{
      super(iBan,habenzins,kontostand);
      this.art = art;
     }
+
+    public void auszahlen(double betrag)
+    {
+        if (betrag <= kontostand)
+        {
+           kontostand = kontostand - betrag;
+        }else {
+            System.out.println("Kontostand zu niedrig!");
+        }
+    }
 }
