@@ -25,18 +25,22 @@ public class Konto {
         System.out.println("Girokonto: "+ kontostand+"\n");
     }
 
-    public void auszahlen(Girokonto g, Sparkonto s,Kontobewegung kb)
+    /*public void auszahlen(Girokonto g, Sparkonto s,Kontobewegung kb)
     {
         if (s.art == 'p'){
-            if ( <= kontostand + dispo)
+            if ( kb.betrag <= kontostand + g.dispo)
             {
-                kontostand = kontostand - betrag;
+                kontostand = kontostand - kb.betrag;
             }else {
-                System.out.println("Kreditlimit von Konto "+ iBan + "überzogen. Buchung über "+betrag+" Euro vom ?! wurde nicht ausgeführt");
+                System.out.println("Kreditlimit von Konto "+ iBan + "überzogen. Buchung über "+kb.betrag+" Euro vom ?! wurde nicht ausgeführt");
             }
-        }else
-        {
-
+        } else {
+            if (kb.betrag <= kontostand)
+            {
+                kontostand = kontostand - kb.betrag;
+            }else {
+                System.out.println("Kontostand zu niedrig!");
+            }
         }
-    }
+    } */
 }
