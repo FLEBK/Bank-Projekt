@@ -8,13 +8,18 @@ public class Main {
 
         Kunde kunde2 = new Kunde("KN0002","Liese Fleißig","Osnabrück",LocalDate.of(2021, 5, 2));
         Sparkonto spar1 = new Sparkonto('p',"DE0002",5,0);
+        Girokonto giro2 = new Girokonto(7.5,2000,"50060090",1.5,0);
 
+        Bank bank1 = new Bank("WELADED1MST","Sparkasse Münster");
 
+        //giro1.einzahlen(4000);
+        //giro1.kontostandausgeben(); // das muss lieber über Kunde laufen
 
-        giro1.einzahlen(4000);
-        giro1.kontostandausgeben(); // das muss lieber über Kunde laufen
+        //spar1.auszahlen(200);
+        //spar1.kontostandausgeben();
 
-        spar1.auszahlen(200);
-        spar1.kontostandausgeben();
+        kunde2.neuKonto(spar1);
+        kunde2.neuKonto(giro2);
+        kunde2.ausgebenKonten(bank1);
     }
 }

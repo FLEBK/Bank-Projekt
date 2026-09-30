@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Kunde {
 
@@ -6,7 +7,7 @@ public class Kunde {
     String name;
     String adresse;
     LocalDate kundeSeit;
-    Konto[] mykonten;
+    private ArrayList<Konto> mykonten = new ArrayList<>();
 
     public Kunde(String kundenNummer, String name, String adresse, LocalDate kundeSeit)
     {
@@ -14,5 +15,17 @@ public class Kunde {
         this.name=name;
         this.adresse=adresse;
         this.kundeSeit=kundeSeit;
+    }
+
+    public void ausgebenKonten(Bank b)
+    {
+        for (Konto k : mykonten)
+        {
+            System.out.println("Kontoinhaber: "+ name + "\nIBAN: "+ k.iBan + "\nBIC: "+b.bic + "," + b.instistutenName + "\nKontostand: "+ k.kontostand+"\n");
+        }
+    }
+    public void neuKonto(Konto k)
+    {
+        mykonten.add(k);
     }
 }

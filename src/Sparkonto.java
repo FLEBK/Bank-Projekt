@@ -12,7 +12,7 @@ public class Sparkonto extends Konto{
     {
         if (betrag <= kontostand)
         {
-           kontostand = kontostand - betrag;
+            kontostand = kontostand - betrag;
         }else {
             System.out.println("Kontostand zu niedrig!");
         }
