@@ -14,12 +14,16 @@ public class Konto {
         this.habenzins = habenzins;
         this.kontostand = kontostand;
     }
-    public void einzahlen ()
+    public void einzahlen (Kontobewegung kb)
     {
-
+        if(kb.betrag >0)
+        {
+            myKontobewegungen.add(kb);
+        }
     }
-    public void kontostandausgeben()
+    public void ausgebenBewegungen(Bank b,Kunde k)
     {
-        System.out.println("Girokonto: "+ kontostand+"\n");
+        ;
+        System.out.println("Kontoauszug\nIBAN: "+ iBan + "\nBIC: "+b.bic + ", " + b.instistutenName + "\nKontostand: " + kontostand + " Euro" + "\nKontoinhaberin: " + k.name);
     }
 }

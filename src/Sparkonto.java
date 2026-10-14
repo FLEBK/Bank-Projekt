@@ -8,13 +8,17 @@ public class Sparkonto extends Konto{
      this.art = art;
     }
 
-    public void auszahlen(double betrag)
+    public void auszahlen(Kontobewegung kb)
     {
-        if (betrag <= kontostand)
+        for (Kontobewegung b : myKontobewegungen) {
+            kontostand += b.betrag;
+        }
+
+        if (kb.betrag <= kontostand)
         {
-            kontostand = kontostand - betrag;
+            myKontobewegungen.add(kb);
         }else {
-            System.out.println("Kontostand zu niedrig!");
+            System.out.println("Kontostand von Konto "+ iBan + "überzogen. Buchung über "+kb.betrag+" Euro vom ?! wurde nicht ausgeführt\n");
         }
     }
 }

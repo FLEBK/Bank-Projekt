@@ -1,13 +1,13 @@
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 
 public class Kontobewegung{
     double betrag;
     LocalDateTime Datum;
     Konto[] myKonto;
 
-    public Kontobewegung(double beitrag)
+    public Kontobewegung(double beitrag, LocalDateTime datum)
     {
         this.betrag = beitrag;
+        this.Datum = datum;
     }
 }

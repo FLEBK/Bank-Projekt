@@ -10,13 +10,17 @@ public class Girokonto extends Konto {
         this.dispo = dispo;
     }
 
-    public void auszahlen(double betrag)
+    public void auszahlen(Kontobewegung kb)
     {
-        if (betrag <= kontostand + dispo)
+        for (Kontobewegung b : myKontobewegungen) {
+            kontostand += b.betrag;
+        }
+
+        if (kb.betrag <= kontostand + dispo)
         {
-            kontostand = kontostand - betrag;
+            myKontobewegungen.add(kb);
         }else {
-            System.out.println("Kreditlimit von Konto "+ iBan + "überzogen. Buchung über "+betrag+" Euro vom ?! wurde nicht ausgeführt\n");
+            System.out.println("Kreditlimit von Konto "+ iBan+ " überzogen. Buchung über "+kb.betrag+" Euro vom "+kb.Datum + "wurde nicht ausgeführt\n");
         }
     }
 }

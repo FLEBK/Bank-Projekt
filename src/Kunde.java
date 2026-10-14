@@ -24,12 +24,13 @@ public class Kunde {
         NumberFormat nf = NumberFormat.getInstance(Locale.GERMANY);
         System.out.println("\nKontoinhaber: " + name);
         for (Konto k : mykonten) {
-            System.out.println("IBAN: " + k.iBan + ",");
+            System.out.println("\nIBAN: " + k.iBan + ",");
             System.out.println("BIC: " + b.bic + ", " + b.instistutenName + ",");
             System.out.println("Kontostand: " + nf.format(k.kontostand) + " Euro");
         }
 
     }
+
     public void neuKonto(Konto k)
     {
         mykonten.add(k);
