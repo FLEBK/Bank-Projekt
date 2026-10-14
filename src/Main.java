@@ -11,15 +11,15 @@ public class Main {
         Girokonto giro2 = new Girokonto(7.5,2000,"50060090",1.5,0);
 
         Bank bank1 = new Bank("WELADED1MST","Sparkasse Münster");
-
-        //giro1.einzahlen(4000);
-        //giro1.kontostandausgeben(); // das muss lieber über Kunde laufen
-
-        //spar1.auszahlen(200);
-        //spar1.kontostandausgeben();
+        giro1.einzahlen();
+        giro1.auszahlen(4000);
 
         kunde2.neuKonto(spar1);
         kunde2.neuKonto(giro2);
         kunde2.ausgebenKonten(bank1);
+
+        kunde1.neuKonto(giro1);
+        kunde1.ausgebenKonten(bank1);
+
     }
 }

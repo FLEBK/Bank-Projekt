@@ -1,5 +1,7 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class Kunde {
 
@@ -7,7 +9,7 @@ public class Kunde {
     String name;
     String adresse;
     LocalDate kundeSeit;
-    private ArrayList<Konto> mykonten = new ArrayList<>();
+    public ArrayList<Konto> mykonten = new ArrayList<>();
 
     public Kunde(String kundenNummer, String name, String adresse, LocalDate kundeSeit)
     {
@@ -19,10 +21,14 @@ public class Kunde {
 
     public void ausgebenKonten(Bank b)
     {
-        for (Konto k : mykonten)
-        {
-            System.out.println("Kontoinhaber: "+ name + "\nIBAN: "+ k.iBan + "\nBIC: "+b.bic + "," + b.instistutenName + "\nKontostand: "+ k.kontostand+"\n");
+        NumberFormat nf = NumberFormat.getInstance(Locale.GERMANY);
+        System.out.println("\nKontoinhaber: " + name);
+        for (Konto k : mykonten) {
+            System.out.println("IBAN: " + k.iBan + ",");
+            System.out.println("BIC: " + b.bic + ", " + b.instistutenName + ",");
+            System.out.println("Kontostand: " + nf.format(k.kontostand) + " Euro");
         }
+
     }
     public void neuKonto(Konto k)
     {

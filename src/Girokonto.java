@@ -16,7 +16,7 @@ public class Girokonto extends Konto {
         {
             kontostand = kontostand - betrag;
         }else {
-            System.out.println("Kreditlimit von Konto "+ iBan + "überzogen. Buchung über "+betrag+" Euro vom ?! wurde nicht ausgeführt");
+            System.out.println("Kreditlimit von Konto "+ iBan + "überzogen. Buchung über "+betrag+" Euro vom ?! wurde nicht ausgeführt\n");
         }
     }
 }
