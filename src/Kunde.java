@@ -22,11 +22,13 @@ public class Kunde {
     public void ausgebenKonten(Bank b)
     {
         NumberFormat nf = NumberFormat.getInstance(Locale.GERMANY);
+        nf.setMinimumFractionDigits(2);
+        nf.setMaximumFractionDigits(2);
         System.out.println("\nKontoinhaber: " + name);
         for (Konto k : mykonten) {
-            System.out.println("\nIBAN: " + k.iBan + ",");
-            System.out.println("BIC: " + b.bic + ", " + b.instistutenName + ",");
-            System.out.println("Kontostand: " + nf.format(k.kontostand) + " Euro");
+            System.out.println("     IBAN: " + k.iBan + ",");
+            System.out.println("     BIC: " + b.bic + ", " + b.instistutenName + ",");
+            System.out.println("     Kontostand: " + nf.format(k.kontostand) + " Euro\n");
         }
 
     }
