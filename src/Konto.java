@@ -27,7 +27,7 @@ public class Konto {
         }
     }
 
-    public double berechnenZinssumme(double sollzins, LocalDateTime abschluss)
+    public double berechnenZinssumme(double sollzins, LocalDateTime abschluss) //Zins berechnung falsch wenn über einen längerne
     {
         double summe = 0;
         double stand = 0;

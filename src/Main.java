@@ -23,9 +23,9 @@ public class Main {
         erst3.text = "Ersteinzahlung";
 
         Kontobewegung kb1 = new Kontobewegung(2850, datum);
-        Kontobewegung kb2 = new Kontobewegung(-100.50, datum);
+        Kontobewegung kb2 = new Kontobewegung(+10000.50, datum);
         Kontobewegung kb3 = new Kontobewegung(-50, datum);
-        Kontobewegung kb4 = new Kontobewegung(-8500, datum);
+        Kontobewegung kb4 = new Kontobewegung(+8500, datum);
 
         giro1.einzahlen(erst1);
         spar1.einzahlen(erst2);
@@ -39,6 +39,14 @@ public class Main {
         giro1.berechnenZinsen(LocalDateTime.of(2026, 4, 1, 0, 0));
         giro2.berechnenZinsen(LocalDateTime.of(2026, 4, 1, 0, 0));
         spar1.berechnenZinsen(LocalDateTime.of(2027, 1, 1, 0, 0));
+        giro1.berechnenZinsen(LocalDateTime.of(2026, 7, 1, 0, 0));
+        giro2.berechnenZinsen(LocalDateTime.of(2026, 7, 1, 0, 0));
+        giro1.berechnenZinsen(LocalDateTime.of(2026, 10, 1, 0, 0));
+        giro2.berechnenZinsen(LocalDateTime.of(2026, 10, 1, 0, 0));
+        giro1.berechnenZinsen(LocalDateTime.of(2027, 1, 1, 0, 0));
+        giro2.berechnenZinsen(LocalDateTime.of(2027, 1, 1, 0, 0));
+
+
 
         kunde1.neuKonto(giro1);
         kunde1.ausgebenKonten(bank1);
